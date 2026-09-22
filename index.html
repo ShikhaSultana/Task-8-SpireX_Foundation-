@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drag &amp; Drop List</title>
+  <meta name="description" content="A dynamic drag-and-drop list built with HTML, CSS, and JavaScript DOM events to reorder items." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+    <!-- Header -->
+    <div class="app__head">
+      <div class="head__icon" aria-hidden="true">🔀</div>
+      <div>
+        <h1>Drag &amp; Drop List</h1>
+        <p>Reorder items by dragging them up or down</p>
+      </div>
+    </div>
+
+    <!-- Add item -->
+    <div class="toolbar">
+      <input
+        type="text"
+        id="newItem"
+        class="add-input"
+        placeholder="Add a new item…"
+        maxlength="80"
+        aria-label="New item text"
+      />
+      <button class="add-btn" id="addBtn" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+        Add
+      </button>
+    </div>
+
+    <!-- Meta -->
+    <div class="meta">
+      <span class="meta__hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 6h11M9 12h11M9 18h11" />
+          <circle cx="4.5" cy="6" r="1.2" fill="currentColor" stroke="none" />
+          <circle cx="4.5" cy="12" r="1.2" fill="currentColor" stroke="none" />
+          <circle cx="4.5" cy="18" r="1.2" fill="currentColor" stroke="none" />
+        </svg>
+        Grab the handle and drag to reorder
+      </span>
+      <button class="reset-btn" id="resetBtn" type="button">Reset order</button>
+    </div>
+
+    <!-- List -->
+    <ul class="list" id="list" aria-label="Reorderable list"></ul>
+
+    <!-- Footer -->
+    <div class="foot">
+      <span class="foot__count"><strong id="count">0</strong> items</span>
+      <span id="orderLabel">Order saved automatically</span>
+    </div>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
